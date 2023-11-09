@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 3</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", init);
+
+        function init() {
+            button.addEventListener("click", () => {
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+                const date = document.getElementById("time").value;
+                const yes = document.getElementById("yes").checked;
+                const no = document.getElementById("no").checked;
+                const checkbox = document.getElementById("check").checked;
+                const color = document.getElementById("color").value;
+
+
+                if (username == "") {
+                    alert("Give me a Name")
+                }
+                else if (password == "") {
+                    alert("Give me a password")
+                }
+                else if (yes == false && no == false) {
+                    alert("Choose something")
+                }
+                else if (checkbox == false) {
+                    alert("Check me in")
+                }
+                else {
+                    const obj = {
+                        user: username,
+                        passwd: password,
+                        colour: color
+                    }
+                    console.log("Username: " + obj.user + "\n" + "Password: " + obj.passwd + "\n" + "Color: " + obj.colour)
+                }
+
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <input type="datetime-local" name="date" id="time">
+    <label for="yes">YES</label>
+    <input type="radio" name="radio" id="yes">
+    <label for="no">NO</label>
+    <input type="radio" name="radio" id="no">
+    <label for="check">ME</label>
+    <input type="checkbox" id="check">
+    <input type="color" id="color">
+    <button id="button">Submit</button>
+</body>
+
+</html>
