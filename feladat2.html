@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 2</title>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", init);
+
+        function init() {
+
+
+            button.addEventListener("click", () => {
+                const username = document.getElementById("username").value;
+                const password1 = document.getElementById("password1").value;
+                const password2 = document.getElementById("password2").value;
+                const email = document.getElementById("email").value;
+                const birthday = document.getElementById("birthday").value;
+                if (username.length < 5 || username.length > 16 && password1 != password2 && password1.length < 5) {
+                    alert("Try again!");
+                    console.log(username.length)
+                    console.log(password1)
+                    console.log(password1.length)
+                    console.log(password2)
+
+                }
+                else {
+                    const user = {
+                        usern: username,
+                        passwd: password1,
+                        mail: email,
+                        bday: birthday
+                    };
+                    console.log("Username: " + user.usern + "\n" + "Password: " + user.passwd + "\n" + "E-mail: " + user.mail + "\n" + "Birthdate: " + user.bday);
+                }
+
+            });
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" placeholder="Username" id="username">
+    <input type="password" placeholder="Password" id="password1">
+    <input type="password" placeholder="Password" id="password2">
+    <input type="email" id="email" placeholder="E-mail">
+    <input type="date" id="birthday">
+    <br>
+    <button id="button">Submit</button>
+</body>
+
+</html>
