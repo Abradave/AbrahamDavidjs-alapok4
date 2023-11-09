@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", init)
+
+        function init() {
+
+            button.addEventListener("click", () => {
+                const lower = document.getElementById("lower").checked;
+                const upper = document.getElementById("upper").checked;
+                var input = document.getElementById("input").value;
+
+                if (input == "") {
+                    alert("Give me something to change.")
+                }
+                else if (upper) {
+                    result.innerHTML = input.toUpperCase();
+                }
+                else {
+                    result.innerHTML = input.value = input.toLowerCase();
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <label for="input">Give me a text and choose:</label>
+    <input type="text" id="input">
+    <br>
+    <label for="lower">Lowercase</label>
+    <input type="radio" id="lower" name="radio" checked>
+    <label for="upper">Uppercase</label>
+    <input type="radio" id="upper" name="radio">
+    <br>
+    <button id="button">Click ME!</button>
+    <p id="result"></p>
+</body>
+
+</html>
